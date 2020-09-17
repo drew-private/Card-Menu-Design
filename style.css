@@ -1,0 +1,154 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #1a1a2e ;
+    font-family: "Cascadia Code SemiBold", sans-serif;
+}
+
+.card-deck {
+    display: flex;
+    padding: 3rem;
+    overflow-x: scroll;
+}
+
+.card-deck::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+
+.card-deck::-webkit-scrollbar-thumb {
+    background: #201c29;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+}
+
+.card-deck::-webkit-scrollbar-track {
+    background: linear-gradient(90deg,#201c29,#201c29 1px,#17141d 0,#17141d);
+}
+
+.card {
+    position: relative;
+    flex-direction: column;
+    width: 400px;
+    min-width: 350px;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: #16213e;
+    box-shadow: -1rem 0 3rem #000;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-1rem);
+}
+
+.card:hover~.card {
+    transform: translateX(130px);
+}
+
+.card:not(:first-child) {
+    margin-left: -130px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.card-text, .card-title {
+    color: #e94560;
+}
+
+.card-text {
+    font-size: 1.5rem;
+    font-family: 'Cascadia Code Light',sans-serif;
+}
+
+.card-title {
+    font-size: 2rem ;
+}
+
+.author-section {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    align-items: center;
+    margin: 3rem 0 0;
+}
+
+.author-section img{
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    overflow: hidden;
+    margin: 16px 16px;
+}
+
+.author-info p:first-of-type {
+    color: gray;
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 0;
+}
+
+.author-info {
+    margin-left: 1rem;
+}
+
+.half-circle {
+    position: absolute;
+    bottom: 119px;
+    left: 55px;
+    width: 60px;
+    height: 48px;
+    fill: none;
+    stroke: #ff7e67;
+    stroke-width: 8;
+    stroke-linecap: round;
+}
+
+.card-title:hover {
+    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    text-shadow: none;
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tags {
+    margin: 1rem 0 0 0;
+    padding: 0.5rem 0 1rem;
+    line-height: 2;
+}
+
+.tags a {
+    font-style: normal;
+    font-weight: 700;
+    color: #7a7a8c;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    border: 3px solid #28242f;
+    border-radius: 2rem;
+    padding: .2rem .85rem .25rem;
+    position: relative;
+}
+
+.tags a:hover {
+    background: linear-gradient(90deg,#ff8a00,#e52e71);
+    color: white;
+    text-shadow: none;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-box-decoration-break: clone;
+    /*background-clip: border-box;*/
+    border-color: white;
+}
+
+@media (min-width: 576px) {
+    .card-deck {
+        flex-flow: row;
+    }
+}
